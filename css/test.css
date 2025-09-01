@@ -1,0 +1,191 @@
+.gerechten {
+    position: relative;
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    width: 60%; /* Adjust width as necessary */
+    height: auto;
+    margin: 0 auto;
+}
+
+.gerechten img {
+    width: 100%; /* Allow images to fill the container */
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.img-2 {
+    cursor: pointer;
+    transition: transform 1s;
+    position: relative; /* Ensure it's part of the flexbox */
+    z-index: 1; /* Stack this above img-1 if they overlap */
+    margin-right: 0; /* Remove unnecessary margin */
+    max-width: 70%; /* Make img-2 smaller */
+    max-height: 70%; /* Make img-2 shorter */
+}
+
+.img-1 {
+    position: absolute; /* Keep it stacked behind .img-2 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(100deg);
+    transition: transform 1s;
+    width: 100%;
+    height: auto;
+    max-width: 95%; /* Make img-1 larger */
+    max-height: 95%; /* Make img-1 taller */
+}
+
+.gerechten:hover .img-1 {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Global Responsive Styles */
+@media screen and (max-width: 600px) {
+    .text-gray-800 {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 1.25rem; /* Smaller font size on mobile */
+        margin-bottom: 6rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 3rem;
+    }
+
+    #scroll-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .img-2 {
+        width: 80%; /* Smaller on mobile */
+        max-height: 80%;
+    }
+
+    .img-1 {
+        width: 90%; /* Larger on mobile */
+        max-height: 90%;
+    }
+
+    .h-custom {
+        height: auto;
+    }
+}
+
+/* Responsive Styles for Tablet Devices (601px - 768px) */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .h-custom {
+        height: 450px;
+    }
+
+    .img-2 {
+        width: 75%;
+        max-height: 75%; /* Make img-2 smaller */
+    }
+
+    .img-1 {
+        width: 90%; /* Make img-1 larger */
+        max-height: 90%; /* Make img-1 taller */
+    }
+}
+
+/* Small Desktop Devices (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .h-custom {
+        height: 500px;
+    }
+
+    .img-2 {
+        width: 70%; /* Smaller img-2 */
+        max-height: 70%;
+    }
+
+    .img-1 {
+        width: 90%; /* Larger img-1 */
+        max-height: 90%; /* Make img-1 larger */
+    }
+}
+
+/* Larger Desktop Devices (1025px and up) */
+@media screen and (min-width: 1025px) {
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .h-custom {
+        height: 600px;
+    }
+
+    .img-2 {
+        width: 65%; /* Make img-2 smaller */
+        max-height: 65%;
+    }
+
+    .img-1 {
+        width: 95%; /* Make img-1 larger */
+        max-height: 95%; /* Make img-1 taller */
+    }
+}
+
+/* For tall mobile screens like 666x1698 */
+@media screen and (min-width: 600px) and (max-width: 768px) and (min-height: 1500px) {
+    .h-custom {
+        height: auto; /* Flexible height for tall screens */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .img-2 {
+        width: 75%; /* Smaller for img-2 */
+        max-height: 75%;
+    }
+
+    .img-1 {
+        width: 90%; /* Larger for img-1 */
+        max-height: 90%;
+    }
+}
+
+/* Screens 1868px and wider */
+@media screen and (min-width: 1868px) {
+    .h-custom {
+        height: 700px;
+    }
+}

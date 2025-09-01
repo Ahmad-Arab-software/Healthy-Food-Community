@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Cooper", sans-serif;
+  /* Apply to the whole body */
+}
+
+/* Load the custom font */
+@font-face {
+  font-family: "Cooper";
+  src: url("../fonts/COOPBL.TTF") format("truetype");
+}
+
+* {
+  font-family: "Cooper";
+}
+
+.suggestion-item {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Algemene stijl voor de navigatiebalk */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  font-family: "Cooper Black", sans-serif;
+  padding-bottom: 100px;
+  transition: background-color 0.3s ease;
+}
+
+#mobile-menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-open #mobile-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.md\\:hidden {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .md\\:hidden {
+    display: none;
+  }
+
+  #mobile-menu {
+    display: none;
+  }
+
+  .md\\:flex {
+    display: flex;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
